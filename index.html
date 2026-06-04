@@ -28,19 +28,11 @@
       --border:    rgba(200,169,110,0.18);
       --glass:     rgba(255,255,255,0.03);
       --radius:    12px;
-      --nav-h:     72px;
+      --nav-h:     76px;
     }
 
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--white);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
@@ -52,7 +44,7 @@
       height: var(--nav-h);
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 48px;
-      transition: background 0.4s ease, backdrop-filter 0.4s ease;
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, border-bottom 0.4s ease;
     }
     nav.scrolled {
       background: rgba(7,8,13,0.92);
@@ -60,20 +52,20 @@
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-logo { display: flex; flex-direction: column; gap: 1px; text-decoration: none; }
-    .nav-logo-top { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; color: var(--white); letter-spacing: 0.03em; }
-    .nav-logo-sub { font-size: 9px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 48px; width: auto; display: block; filter: brightness(0) invert(1); }
     .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
     .nav-links a { font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: var(--grey); transition: color 0.25s; }
     .nav-links a:hover { color: var(--white); }
     .nav-cta {
-      font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
-      text-decoration: none; color: var(--bg) !important; background: var(--gold);
-      padding: 10px 22px; border-radius: 4px; transition: background 0.25s, transform 0.2s !important;
+      font-size: 11px !important; font-weight: 600 !important; letter-spacing: 0.16em !important;
+      color: var(--bg) !important; background: var(--gold);
+      padding: 10px 22px; border-radius: 4px;
+      transition: background 0.25s, transform 0.2s !important;
     }
-    .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
+    .nav-cta:hover { background: var(--gold-light) !important; color: var(--bg) !important; transform: translateY(-1px); }
     .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-    .nav-hamburger span { width: 24px; height: 1.5px; background: var(--white); transition: all 0.3s; display: block; }
+    .nav-hamburger span { width: 24px; height: 1.5px; background: var(--white); display: block; transition: all 0.3s; }
 
     /* ─── HERO ─── */
     #hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
@@ -87,49 +79,23 @@
     .hero-bg::after {
       content: ''; position: absolute; inset: 0;
       background:
-        linear-gradient(to bottom, rgba(7,8,13,0.52) 0%, rgba(7,8,13,0.70) 50%, rgba(7,8,13,0.94) 100%),
+        linear-gradient(to bottom, rgba(7,8,13,0.50) 0%, rgba(7,8,13,0.68) 50%, rgba(7,8,13,0.94) 100%),
         radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,169,110,0.06) 0%, transparent 60%);
     }
-    .hero-grid {
-      position: absolute; inset: 0; opacity: 0.03;
-      background-image: linear-gradient(rgba(200,169,110,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(200,169,110,0.5) 1px, transparent 1px);
-      background-size: 80px 80px;
-    }
-    .hero-content {
-      position: relative; z-index: 2; text-align: center; padding: 0 24px; max-width: 900px;
-      animation: heroFadeUp 1.2s ease forwards;
-    }
+    .hero-grid { position: absolute; inset: 0; opacity: 0.025; background-image: linear-gradient(rgba(200,169,110,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(200,169,110,0.5) 1px, transparent 1px); background-size: 80px 80px; }
+    .hero-content { position: relative; z-index: 2; text-align: center; padding: 0 24px; max-width: 900px; animation: heroFadeUp 1.2s ease forwards; }
     @keyframes heroFadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-    .hero-label {
-      display: inline-flex; align-items: center; gap: 10px; font-size: 10px; font-weight: 600;
-      letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold);
-      border: 1px solid var(--border); padding: 8px 18px; border-radius: 50px; margin-bottom: 36px; background: var(--gold-dim);
-    }
+    .hero-label { display: inline-flex; align-items: center; gap: 10px; font-size: 10px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--border); padding: 8px 18px; border-radius: 50px; margin-bottom: 36px; background: var(--gold-dim); }
     .hero-label::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
     .hero-h1 { font-family: 'Playfair Display', serif; font-size: clamp(42px, 7vw, 82px); font-weight: 400; line-height: 1.1; color: var(--white); margin-bottom: 28px; }
     .hero-h1 em { font-style: italic; color: var(--gold); }
-    .hero-sub { font-size: clamp(15px, 1.8vw, 18px); font-weight: 300; line-height: 1.7; color: rgba(240,237,232,0.8); max-width: 640px; margin: 0 auto 52px; }
+    .hero-sub { font-size: clamp(15px, 1.8vw, 18px); font-weight: 300; line-height: 1.7; color: rgba(240,237,232,0.82); max-width: 640px; margin: 0 auto 52px; }
     .hero-actions { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 600;
-      letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: var(--bg);
-      background: var(--gold); padding: 16px 34px; border-radius: 4px;
-      transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
-      box-shadow: 0 4px 32px rgba(200,169,110,0.25);
-    }
+    .btn-primary { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: var(--bg); background: var(--gold); padding: 16px 34px; border-radius: 4px; transition: background 0.25s, transform 0.2s, box-shadow 0.25s; box-shadow: 0 4px 32px rgba(200,169,110,0.25); }
     .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 40px rgba(200,169,110,0.35); }
-    .btn-secondary {
-      display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 600;
-      letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: var(--white);
-      border: 1px solid rgba(255,255,255,0.25); padding: 16px 34px; border-radius: 4px;
-      transition: border-color 0.25s, transform 0.2s, color 0.25s;
-    }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: var(--white); border: 1px solid rgba(255,255,255,0.25); padding: 16px 34px; border-radius: 4px; transition: border-color 0.25s, transform 0.2s, color 0.25s; }
     .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
-    .hero-scroll {
-      position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: 10px; z-index: 2;
-      animation: scrollBounce 2.5s ease-in-out infinite;
-    }
+    .hero-scroll { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 10px; z-index: 2; animation: scrollBounce 2.5s ease-in-out infinite; }
     .hero-scroll span { font-size: 9px; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--grey2); }
     .hero-scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--gold), transparent); }
     @keyframes scrollBounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
@@ -158,11 +124,7 @@
     #about { background: var(--bg); }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 64px; }
     .about-right { display: flex; flex-direction: column; gap: 32px; }
-    .about-pillar {
-      display: flex; gap: 20px; align-items: flex-start; padding: 28px; border-radius: var(--radius);
-      border: 1px solid var(--border); background: var(--glass);
-      transition: border-color 0.3s, background 0.3s, transform 0.3s;
-    }
+    .about-pillar { display: flex; gap: 20px; align-items: flex-start; padding: 28px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--glass); transition: border-color 0.3s, background 0.3s, transform 0.3s; }
     .about-pillar:hover { border-color: rgba(200,169,110,0.4); background: var(--gold-dim); transform: translateX(6px); }
     .about-pillar-icon { width: 42px; height: 42px; flex-shrink: 0; border-radius: 8px; background: var(--gold-dim); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
     .about-pillar-icon svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
@@ -229,8 +191,13 @@
     .contact-person-tel:hover { color: var(--gold); }
 
     /* ─── FOOTER ─── */
-    footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 36px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-    .footer-logo { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; color: var(--white); text-decoration: none; }
+    footer {
+      background: var(--bg2); border-top: 1px solid var(--border);
+      padding: 32px 48px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+    }
+    .footer-logo img { height: 36px; width: auto; display: block; filter: brightness(0) invert(1); opacity: 0.7; }
+    .footer-logo:hover img { opacity: 1; transition: opacity 0.2s; }
     .footer-copy { font-size: 12px; font-weight: 300; color: var(--grey2); letter-spacing: 0.04em; }
 
     /* ─── MOBILE MENU ─── */
@@ -257,7 +224,8 @@
       .services-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
       .services-header { flex-direction: column; align-items: flex-start; }
-      footer { flex-direction: column; text-align: center; }
+      footer { flex-direction: column; text-align: center; align-items: center; }
+      .nav-logo img { height: 38px; }
     }
   </style>
 </head>
@@ -266,8 +234,7 @@
 <!-- NAV -->
 <nav id="navbar">
   <a href="#hero" class="nav-logo" aria-label="Main Sale Property Partners Home">
-    <span class="nav-logo-top">Main Sale</span>
-    <span class="nav-logo-sub">Property Partners</span>
+    <img src="assets/Main Sale Logo.png" alt="Main Sale Property Partners" />
   </a>
   <ul class="nav-links" role="navigation" aria-label="Primary navigation">
     <li><a href="#about">About</a></li>
@@ -336,24 +303,15 @@
       <div class="about-right">
         <div class="about-pillar fade-up" style="transition-delay:0.1s">
           <div class="about-pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-          <div>
-            <div class="about-pillar-title">Confidentiality</div>
-            <div class="about-pillar-text">Sensitive transactions handled with complete discretion, protecting all parties from first contact through closing.</div>
-          </div>
+          <div><div class="about-pillar-title">Confidentiality</div><div class="about-pillar-text">Sensitive transactions handled with complete discretion, protecting all parties from first contact through closing.</div></div>
         </div>
         <div class="about-pillar fade-up" style="transition-delay:0.2s">
           <div class="about-pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <div>
-            <div class="about-pillar-title">Loyalty</div>
-            <div class="about-pillar-text">We represent your interests exclusively, providing independent advice you can rely on at every stage.</div>
-          </div>
+          <div><div class="about-pillar-title">Loyalty</div><div class="about-pillar-text">We represent your interests exclusively, providing independent advice you can rely on at every stage.</div></div>
         </div>
         <div class="about-pillar fade-up" style="transition-delay:0.3s">
           <div class="about-pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-          <div>
-            <div class="about-pillar-title">Selectivity</div>
-            <div class="about-pillar-text">We work on selective mandates ensuring every client receives our complete focus, expertise and time.</div>
-          </div>
+          <div><div class="about-pillar-title">Selectivity</div><div class="about-pillar-text">We work on selective mandates ensuring every client receives our complete focus, expertise and time.</div></div>
         </div>
       </div>
     </div>
@@ -433,7 +391,7 @@
     </div>
   </div>
   <div class="marquee-wrap" aria-label="Client logos">
-    <div class="marquee-track" id="marqueeTrack">
+    <div class="marquee-track">
       <div class="client-chip"><span>Siemens</span></div>
       <div class="client-chip"><span>Canon</span></div>
       <div class="client-chip"><span>LG</span></div>
@@ -501,14 +459,8 @@
         <div class="contact-office">Bespoke by Barrow</div>
         <div class="contact-address">15 Forest Road, Waverly<br>2090</div>
         <div class="contact-people">
-          <div class="contact-person">
-            <div class="contact-person-name">Mike Wardle</div>
-            <a href="tel:+27824958104" class="contact-person-tel" id="contact-mike-tel">+27 82 495 8104</a>
-          </div>
-          <div class="contact-person">
-            <div class="contact-person-name">Thabo Mashiloane</div>
-            <a href="tel:+27726111218" class="contact-person-tel" id="contact-thabo-tel">+27 72 611 1218</a>
-          </div>
+          <div><div class="contact-person-name">Mike Wardle</div><a href="tel:+27824958104" class="contact-person-tel" id="contact-mike-tel">+27 82 495 8104</a></div>
+          <div><div class="contact-person-name">Thabo Mashiloane</div><a href="tel:+27726111218" class="contact-person-tel" id="contact-thabo-tel">+27 72 611 1218</a></div>
         </div>
       </div>
       <div class="contact-card fade-up" style="transition-delay:0.1s">
@@ -516,10 +468,7 @@
         <div class="contact-office">TBE V&amp;A Waterfront</div>
         <div class="contact-address">3 Dock Road, V&amp;A Waterfront<br>Cape Town 8002</div>
         <div class="contact-people">
-          <div class="contact-person">
-            <div class="contact-person-name">Daniel Fisher</div>
-            <a href="tel:+27834116061" class="contact-person-tel" id="contact-daniel-tel">+27 83 411 6061</a>
-          </div>
+          <div><div class="contact-person-name">Daniel Fisher</div><a href="tel:+27834116061" class="contact-person-tel" id="contact-daniel-tel">+27 83 411 6061</a></div>
         </div>
       </div>
       <div class="contact-card fade-up" style="transition-delay:0.15s">
@@ -537,7 +486,9 @@
 
 <!-- FOOTER -->
 <footer role="contentinfo">
-  <a href="#hero" class="footer-logo" aria-label="Main Sale Property Partners — back to top">Main Sale Property Partners</a>
+  <a href="#hero" class="footer-logo" aria-label="Main Sale Property Partners — back to top">
+    <img src="assets/Main Sale Logo.png" alt="Main Sale Property Partners" />
+  </a>
   <span class="footer-copy">© 2025 Main Sale Property Partners. All rights reserved.</span>
 </footer>
 
@@ -553,7 +504,11 @@
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
   document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburger.setAttribute('aria-expanded', false); document.body.style.overflow = ''; });
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+      document.body.style.overflow = '';
+    });
   });
 
   const observer = new IntersectionObserver((entries) => {

@@ -16,19 +16,22 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #07080d;
-      --bg2:       #0d0f18;
-      --bg3:       #111420;
-      --gold:      #c8a96e;
-      --gold-light:#e0c98a;
-      --gold-dim:  rgba(200,169,110,0.12);
-      --white:     #f0ede8;
-      --grey:      #8a8a9a;
-      --grey2:     #55566a;
-      --border:    rgba(200,169,110,0.18);
+      --bg:        #0b1520;
+      --bg2:       #0f1e2e;
+      --bg3:       #132030;
+      --gold:      #7a8fa6;
+      --gold-light:#9ab0c8;
+      --gold-dim:  rgba(122,143,166,0.14);
+      --white:     #f0f4f8;
+      --grey:      #8a9baa;
+      --grey2:     #526070;
+      --border:    rgba(122,143,166,0.22);
       --glass:     rgba(255,255,255,0.03);
       --radius:    12px;
       --nav-h:     76px;
+      /* Brand navy for solid backgrounds */
+      --navy:      #1a2f4a;
+      --navy-deep: #132238;
     }
 
     html { scroll-behavior: smooth; }
@@ -59,11 +62,12 @@
     .nav-links a:hover { color: var(--white); }
     .nav-cta {
       font-size: 11px !important; font-weight: 600 !important; letter-spacing: 0.16em !important;
-      color: var(--bg) !important; background: var(--gold);
+      color: var(--white) !important; background: var(--navy);
       padding: 10px 22px; border-radius: 4px;
+      border: 1px solid rgba(122,143,166,0.35);
       transition: background 0.25s, transform 0.2s !important;
     }
-    .nav-cta:hover { background: var(--gold-light) !important; color: var(--bg) !important; transform: translateY(-1px); }
+    .nav-cta:hover { background: var(--navy-deep) !important; color: var(--white) !important; transform: translateY(-1px); border-color: rgba(122,143,166,0.55) !important; }
     .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
     .nav-hamburger span { width: 24px; height: 1.5px; background: var(--white); display: block; transition: all 0.3s; }
 
@@ -79,10 +83,10 @@
     .hero-bg::after {
       content: ''; position: absolute; inset: 0;
       background:
-        linear-gradient(to bottom, rgba(7,8,13,0.50) 0%, rgba(7,8,13,0.68) 50%, rgba(7,8,13,0.94) 100%),
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,169,110,0.06) 0%, transparent 60%);
+        linear-gradient(to bottom, rgba(11,21,32,0.48) 0%, rgba(11,21,32,0.66) 50%, rgba(11,21,32,0.94) 100%),
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(26,47,74,0.18) 0%, transparent 60%);
     }
-    .hero-grid { position: absolute; inset: 0; opacity: 0.025; background-image: linear-gradient(rgba(200,169,110,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(200,169,110,0.5) 1px, transparent 1px); background-size: 80px 80px; }
+    .hero-grid { position: absolute; inset: 0; opacity: 0.04; background-image: linear-gradient(rgba(122,143,166,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(122,143,166,0.4) 1px, transparent 1px); background-size: 80px 80px; }
     .hero-content { position: relative; z-index: 2; text-align: center; padding: 0 24px; max-width: 900px; animation: heroFadeUp 1.2s ease forwards; }
     @keyframes heroFadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
     .hero-label { display: inline-flex; align-items: center; gap: 10px; font-size: 10px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--border); padding: 8px 18px; border-radius: 50px; margin-bottom: 36px; background: var(--gold-dim); }
@@ -91,8 +95,8 @@
     .hero-h1 em { font-style: italic; color: var(--gold); }
     .hero-sub { font-size: clamp(15px, 1.8vw, 18px); font-weight: 300; line-height: 1.7; color: rgba(240,237,232,0.82); max-width: 640px; margin: 0 auto 52px; }
     .hero-actions { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
-    .btn-primary { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: var(--bg); background: var(--gold); padding: 16px 34px; border-radius: 4px; transition: background 0.25s, transform 0.2s, box-shadow 0.25s; box-shadow: 0 4px 32px rgba(200,169,110,0.25); }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 40px rgba(200,169,110,0.35); }
+    .btn-primary { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: var(--white); background: var(--navy); padding: 16px 34px; border-radius: 4px; transition: background 0.25s, transform 0.2s, box-shadow 0.25s; box-shadow: 0 4px 32px rgba(26,47,74,0.5); border: 1px solid rgba(122,143,166,0.35); }
+    .btn-primary:hover { background: var(--navy-deep); transform: translateY(-2px); box-shadow: 0 8px 40px rgba(26,47,74,0.6); border-color: rgba(122,143,166,0.55); }
     .btn-secondary { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: var(--white); border: 1px solid rgba(255,255,255,0.25); padding: 16px 34px; border-radius: 4px; transition: border-color 0.25s, transform 0.2s, color 0.25s; }
     .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
     .hero-scroll { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 10px; z-index: 2; animation: scrollBounce 2.5s ease-in-out infinite; }
@@ -106,7 +110,7 @@
     .stat-item { padding: 52px 32px; text-align: center; border-right: 1px solid var(--border); opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .stat-item:last-child { border-right: none; }
     .stat-item.visible { opacity: 1; transform: translateY(0); }
-    .stat-num { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 10px; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 600; color: var(--white); line-height: 1; margin-bottom: 10px; }
     .stat-label { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); line-height: 1.5; }
 
     /* ─── SECTIONS ─── */
@@ -266,7 +270,7 @@
     <h1 class="hero-h1">Strategic Property Transactions,<br><em>Done With Discretion.</em></h1>
     <p class="hero-sub">Main Sale Property Partners works with South Africa's corporate real estate industry — concluding leasing and investment sales with confidentiality, loyalty and precision.</p>
     <div class="hero-actions">
-      <a href="https://www.iprop.co.za" target="_blank" rel="noopener noreferrer" class="btn-primary" id="hero-listings-btn">
+      <a href="https://iprop.solutions/mainsale/properties/for-sale" target="_blank" rel="noopener noreferrer" class="btn-primary" id="hero-listings-btn">
         View Investment Listings
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
@@ -372,7 +376,7 @@
         <div class="section-tag">Live Listings</div>
         <h2 class="section-h2" id="listings-h2">Explore Current Investment<br><em>Opportunities</em></h2>
         <p class="section-lead" style="margin-bottom:40px">Browse our active commercial property listings on iProp — updated in real time, covering Johannesburg, Cape Town and beyond.</p>
-        <a href="https://www.iprop.co.za" target="_blank" rel="noopener noreferrer" class="btn-primary" id="listings-browse-btn">
+        <a href="https://iprop.solutions/mainsale/properties/for-sale" target="_blank" rel="noopener noreferrer" class="btn-primary" id="listings-browse-btn">
           Browse Listings
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>

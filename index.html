@@ -173,10 +173,12 @@
     .marquee-track { display: flex; animation: marqueeScroll 38s linear infinite; width: max-content; }
     .marquee-track:hover { animation-play-state: paused; }
     @keyframes marqueeScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    .client-chip { display: flex; align-items: center; justify-content: center; padding: 18px 34px; margin: 0 12px; border: 1px solid var(--border); border-radius: 6px; background: var(--glass); white-space: nowrap; transition: border-color 0.25s, background 0.25s; cursor: default; }
-    .client-chip:hover { border-color: rgba(200,169,110,0.35); background: var(--gold-dim); }
-    .client-chip span { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey); transition: color 0.25s; }
-    .client-chip:hover span { color: var(--gold); }
+    .client-chip { display: flex; align-items: center; justify-content: center; padding: 16px 28px; margin: 0 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--glass); white-space: nowrap; transition: border-color 0.3s, background 0.3s; cursor: default; min-width: 140px; height: 72px; }
+    .client-chip:hover { border-color: rgba(122,143,166,0.4); background: rgba(122,143,166,0.07); }
+    .client-chip img { height: 28px; width: auto; max-width: 110px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.45; transition: opacity 0.3s; display: block; }
+    .client-chip:hover img { opacity: 0.85; }
+    .client-chip span { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey); opacity: 0.7; transition: opacity 0.3s; }
+    .client-chip:hover span { opacity: 1; }
 
     /* ─── CONTACT ─── */
     #contact { background: var(--bg); }
@@ -396,51 +398,49 @@
   </div>
   <div class="marquee-wrap" aria-label="Client logos">
     <div class="marquee-track">
-      <div class="client-chip"><span>Siemens</span></div>
-      <div class="client-chip"><span>Canon</span></div>
-      <div class="client-chip"><span>LG</span></div>
-      <div class="client-chip"><span>Life Healthcare</span></div>
-      <div class="client-chip"><span>Garmin</span></div>
-      <div class="client-chip"><span>KIA</span></div>
-      <div class="client-chip"><span>Chubb</span></div>
-      <div class="client-chip"><span>Motus</span></div>
-      <div class="client-chip"><span>Cartrack</span></div>
-      <div class="client-chip"><span>Tracker</span></div>
-      <div class="client-chip"><span>Imperial Holdings</span></div>
-      <div class="client-chip"><span>Sasfin</span></div>
-      <div class="client-chip"><span>Brenntag</span></div>
-      <div class="client-chip"><span>Consol</span></div>
-      <div class="client-chip"><span>Rainbow Chicken</span></div>
+      <div class="client-chip"><img src="https://logo.clearbit.com/siemens.com" alt="Siemens" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none">Siemens</span></div>
+      <div class="client-chip"><img src="https://logo.clearbit.com/canon.com" alt="Canon" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none">Canon</span></div>
+      <div class="client-chip"><img src="https://logo.clearbit.com/lg.com" alt="LG" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none">LG</span></div>
+      <div class="client-chip"><img src="https://logo.clearbit.com/lifehealthcare.co.za" alt="Life Healthcare" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none">Life Healthcare</span></div>
+      <div class="client-chip"><img src="https://logo.clearbit.com/garmin.com" alt="Garmin" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none">Garmin</span></div>
+      <div class="client-chip"><img src="https://logo.clearbit.com/kia.com" alt="KIA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none">KIA</span></div>
+      <div class="client-chip"><img src="https://logo.clearbit.com/chubb.com" alt="Chubb" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none">Chubb</span></div>
+      <div class="client-chip"><img src="https://logo.clearbit.com/motus.co.za" alt="Motus" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none">Motus</span></div>
+      <div class="client-chip"><img src="https://logo.clearbit.com/cartrack.com" alt="Cartrack" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none">Cartrack</span></div>
+      <div class="client-chip"><img src="https://logo.clearbit.com/trackersecure.com" alt="Tracker" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none">Tracker</span></div>
+      <div class="client-chip"><img src="https://logo.clearbit.com/imperiallogistics.com" alt="Imperial Holdings" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none">Imperial Holdings</span></div>
+      <div class="client-chip"><img src="https://logo.clearbit.com/sasfin.com" alt="Sasfin" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none">Sasfin</span></div>
+      <div class="client-chip"><img src="https://logo.clearbit.com/brenntag.com" alt="Brenntag" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none">Brenntag</span></div>
+      <div class="client-chip"><img src="https://logo.clearbit.com/consol.co.za" alt="Consol" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none">Consol</span></div>
+      <div class="client-chip"><img src="https://logo.clearbit.com/rainbowchicken.co.za" alt="Rainbow Chicken" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none">Rainbow Chicken</span></div>
+      <div class="client-chip"><img src="https://logo.clearbit.com/travelex.com" alt="Travelex" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none">Travelex</span></div>
+      <div class="client-chip"><img src="https://logo.clearbit.com/weirgroup.com" alt="Weir Group" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span style="display:none">Weir Group</span></div>
       <div class="client-chip"><span>Aprio</span></div>
       <div class="client-chip"><span>Dariel</span></div>
-      <div class="client-chip"><span>Weir Group</span></div>
-      <div class="client-chip"><span>Travelex</span></div>
-      <div class="client-chip"><span>Octagon</span></div>
       <div class="client-chip"><span>Thebe Investments</span></div>
       <div class="client-chip"><span>The Business Exchange</span></div>
       <div class="client-chip"><span>Overnight Logistics</span></div>
       <div class="client-chip"><span>Sparks School</span></div>
       <!-- Duplicate for seamless loop -->
-      <div class="client-chip" aria-hidden="true"><span>Siemens</span></div>
-      <div class="client-chip" aria-hidden="true"><span>Canon</span></div>
-      <div class="client-chip" aria-hidden="true"><span>LG</span></div>
-      <div class="client-chip" aria-hidden="true"><span>Life Healthcare</span></div>
-      <div class="client-chip" aria-hidden="true"><span>Garmin</span></div>
-      <div class="client-chip" aria-hidden="true"><span>KIA</span></div>
-      <div class="client-chip" aria-hidden="true"><span>Chubb</span></div>
-      <div class="client-chip" aria-hidden="true"><span>Motus</span></div>
-      <div class="client-chip" aria-hidden="true"><span>Cartrack</span></div>
-      <div class="client-chip" aria-hidden="true"><span>Tracker</span></div>
-      <div class="client-chip" aria-hidden="true"><span>Imperial Holdings</span></div>
-      <div class="client-chip" aria-hidden="true"><span>Sasfin</span></div>
-      <div class="client-chip" aria-hidden="true"><span>Brenntag</span></div>
-      <div class="client-chip" aria-hidden="true"><span>Consol</span></div>
-      <div class="client-chip" aria-hidden="true"><span>Rainbow Chicken</span></div>
+      <div class="client-chip" aria-hidden="true"><img src="https://logo.clearbit.com/siemens.com" alt="" role="presentation"><span style="display:none">Siemens</span></div>
+      <div class="client-chip" aria-hidden="true"><img src="https://logo.clearbit.com/canon.com" alt="" role="presentation"><span style="display:none">Canon</span></div>
+      <div class="client-chip" aria-hidden="true"><img src="https://logo.clearbit.com/lg.com" alt="" role="presentation"><span style="display:none">LG</span></div>
+      <div class="client-chip" aria-hidden="true"><img src="https://logo.clearbit.com/lifehealthcare.co.za" alt="" role="presentation"><span style="display:none">Life Healthcare</span></div>
+      <div class="client-chip" aria-hidden="true"><img src="https://logo.clearbit.com/garmin.com" alt="" role="presentation"><span style="display:none">Garmin</span></div>
+      <div class="client-chip" aria-hidden="true"><img src="https://logo.clearbit.com/kia.com" alt="" role="presentation"><span style="display:none">KIA</span></div>
+      <div class="client-chip" aria-hidden="true"><img src="https://logo.clearbit.com/chubb.com" alt="" role="presentation"><span style="display:none">Chubb</span></div>
+      <div class="client-chip" aria-hidden="true"><img src="https://logo.clearbit.com/motus.co.za" alt="" role="presentation"><span style="display:none">Motus</span></div>
+      <div class="client-chip" aria-hidden="true"><img src="https://logo.clearbit.com/cartrack.com" alt="" role="presentation"><span style="display:none">Cartrack</span></div>
+      <div class="client-chip" aria-hidden="true"><img src="https://logo.clearbit.com/trackersecure.com" alt="" role="presentation"><span style="display:none">Tracker</span></div>
+      <div class="client-chip" aria-hidden="true"><img src="https://logo.clearbit.com/imperiallogistics.com" alt="" role="presentation"><span style="display:none">Imperial Holdings</span></div>
+      <div class="client-chip" aria-hidden="true"><img src="https://logo.clearbit.com/sasfin.com" alt="" role="presentation"><span style="display:none">Sasfin</span></div>
+      <div class="client-chip" aria-hidden="true"><img src="https://logo.clearbit.com/brenntag.com" alt="" role="presentation"><span style="display:none">Brenntag</span></div>
+      <div class="client-chip" aria-hidden="true"><img src="https://logo.clearbit.com/consol.co.za" alt="" role="presentation"><span style="display:none">Consol</span></div>
+      <div class="client-chip" aria-hidden="true"><img src="https://logo.clearbit.com/rainbowchicken.co.za" alt="" role="presentation"><span style="display:none">Rainbow Chicken</span></div>
+      <div class="client-chip" aria-hidden="true"><img src="https://logo.clearbit.com/travelex.com" alt="" role="presentation"><span style="display:none">Travelex</span></div>
+      <div class="client-chip" aria-hidden="true"><img src="https://logo.clearbit.com/weirgroup.com" alt="" role="presentation"><span style="display:none">Weir Group</span></div>
       <div class="client-chip" aria-hidden="true"><span>Aprio</span></div>
       <div class="client-chip" aria-hidden="true"><span>Dariel</span></div>
-      <div class="client-chip" aria-hidden="true"><span>Weir Group</span></div>
-      <div class="client-chip" aria-hidden="true"><span>Travelex</span></div>
-      <div class="client-chip" aria-hidden="true"><span>Octagon</span></div>
       <div class="client-chip" aria-hidden="true"><span>Thebe Investments</span></div>
       <div class="client-chip" aria-hidden="true"><span>The Business Exchange</span></div>
       <div class="client-chip" aria-hidden="true"><span>Overnight Logistics</span></div>
@@ -464,7 +464,6 @@
         <div class="contact-address">15 Forest Road, Waverly<br>2090</div>
         <div class="contact-people">
           <div><div class="contact-person-name">Mike Wardle</div><a href="tel:+27824958104" class="contact-person-tel" id="contact-mike-tel">+27 82 495 8104</a></div>
-          <div><div class="contact-person-name">Thabo Mashiloane</div><a href="tel:+27726111218" class="contact-person-tel" id="contact-thabo-tel">+27 72 611 1218</a></div>
         </div>
       </div>
       <div class="contact-card fade-up" style="transition-delay:0.1s">
